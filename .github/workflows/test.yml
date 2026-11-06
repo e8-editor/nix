@@ -1,0 +1,28 @@
+# Builds the flake's package, which runs E8 once to check its version, on
+# macOS and Linux.
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - name: Build
+        run: nix build --print-build-logs .#e8
+      - name: Run
+        run: |
+          ls result/bin
+          if [ "$RUNNER_OS" = macOS ]; then ls result/Applications/E8.app/Contents/MacOS; fi

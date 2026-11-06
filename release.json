@@ -1,0 +1,12 @@
+{
+  "version": "0.3.0",
+  "systems": {
+    "aarch64-darwin": {
+      "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.3.0/e8-0.3.0-aarch64-apple-darwin.tar.gz", "hash": "sha256-IiDxq4QF7CjDyEc1Uh6qVEBZE9FPUBcJyaFvQyIwO/E=" },
+      "app": { "url": "https://github.com/e8-editor/e8/releases/download/v0.3.0/E8-0.3.0-aarch64-apple-darwin.app.tar.gz", "hash": "sha256-/Jq/0fANlIdynKvhkt8mRIRvZsSziOd2oQVLGYFkQhs=" }
+    },
+    "x86_64-linux": {
+      "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.3.0/e8-0.3.0-x86_64-unknown-linux-gnu.tar.gz", "hash": "sha256-TutEisdUD5b4nlyiS6TqtvOVTW3bBbXDUFcwky05P7k=" }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+# Each day, and by hand, rewrites release.json for E8's newest release and
+# commits it if it changed, as the Homebrew tap does with its formula.
+name: Update
+
+on:
+  schedule:
+    - cron: "23 6 * * *"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: A release tag, such as v0.3.0; the newest if empty
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write release.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./update.sh ${{ inputs.tag }}
+
+      - name: Commit it if it changed
+        run: |
+          if git diff --quiet; then
+            echo "release.json is current."
+            exit 0
+          fi
+          version=$(jq -r .version release.json)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "e8 $version"
+          git push
