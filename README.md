@@ -2,24 +2,31 @@
 
 A flake that installs [E8](https://github.com/e8-editor/e8) from its releases, on Apple silicon Macs and on x86_64 Linux: `e8`, the editor in a terminal, and `e8-mcp`, and on a Mac `E8.app`, the editor in a window.
 
-## nix-darwin
+## nix-darwin and home-manager
 
-In your flake:
+In your flake's inputs:
 
 ```nix
-inputs.e8 = {
-  url = "github:e8-editor/nix";
-  inputs.nixpkgs.follows = "nixpkgs";
+e8.url = "github:e8-editor/nix";
+e8.inputs.nixpkgs.follows = "nixpkgs";
+```
+
+Add its overlay where your `pkgs` is made, so every module sees `pkgs.e8`:
+
+```nix
+pkgs = import inputs.nixpkgs {
+  system = "aarch64-darwin";
+  overlays = [ inputs.e8.overlays.default ];
 };
 ```
 
-and in the configuration, with `inputs` passed to it:
+Then list it as any other package, in home-manager's `home.packages` or nix-darwin's `environment.systemPackages`:
 
 ```nix
-environment.systemPackages = [ inputs.e8.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+home.packages = [ pkgs.e8 ];
 ```
 
-`darwin-rebuild switch` puts `e8` on the PATH and `E8.app` in `/Applications/Nix Apps`, where Spotlight and Launchpad find it. `nix flake update e8` brings it up to date. With home-manager, the same package goes in `home.packages`; `overlays.default` adds it to `pkgs` as `pkgs.e8`.
+After `darwin-rebuild switch`, `e8` is on the PATH and `E8.app` is in `~/Applications/Home Manager Apps` (or `/Applications/Nix Apps` from `environment.systemPackages`), where Spotlight and Launchpad find it. `nix flake update e8` brings it up to date. Without an overlay, the package is `inputs.e8.packages.${pkgs.stdenv.hostPlatform.system}.default`.
 
 ## Without a configuration
 
