@@ -1,3 +1,5 @@
+<img alt="E8" src="https://raw.githubusercontent.com/e8-editor/e8/main/docs/assets/banner-compact.png">
+
 # E8 for Nix
 
 A flake that installs [E8](https://github.com/e8-editor/e8) from its releases, on Apple silicon Macs and on x86_64 Linux: `e8`, the editor in a terminal, and `e8-mcp`, and on a Mac `E8.app`, the editor in a window.
