@@ -1,12 +1,12 @@
 {
-  "version": "0.5.11",
+  "version": "0.5.12",
   "systems": {
     "aarch64-darwin": {
-      "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.11/e8-0.5.11-aarch64-apple-darwin.tar.gz", "hash": "sha256-Ry2jYIRh9+zlCWy2orv+xOwEo6VSZDT3wJ49WQQ5BLQ=" },
-      "app": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.11/E8-0.5.11-aarch64-apple-darwin.app.tar.gz", "hash": "sha256-UIuhCIH1j9a7/fBV3HF1crVycMzDhK4uABJlzaLIRU0=" }
+      "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.12/e8-0.5.12-aarch64-apple-darwin.tar.gz", "hash": "sha256-0tVuSK6Q2hV72v4dow7P7gejxJqef8Q7TP1RnPt+NRc=" },
+      "app": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.12/E8-0.5.12-aarch64-apple-darwin.app.tar.gz", "hash": "sha256-b3BA7hneG/IUQdKpU9BqjIdQ0Zor4dFAH132CKSBRf0=" }
     },
     "x86_64-linux": {
-      "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.11/e8-0.5.11-x86_64-unknown-linux-gnu.tar.gz", "hash": "sha256-LQXH0wVs5uwKMcWtSJ1JPsDXsVOWrW5kAY+8rKqU4+E=" }
+      "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.12/e8-0.5.12-x86_64-unknown-linux-gnu.tar.gz", "hash": "sha256-JvbVt6BqxM8xudcE7gZ0a4A7vvoRGXyQxx9NHzqvnCY=" }
     }
   }
 }
