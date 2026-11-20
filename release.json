@@ -3,7 +3,7 @@
   "systems": {
     "aarch64-darwin": {
       "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.19/e8-0.5.19-aarch64-apple-darwin.tar.gz", "hash": "sha256-baPQPcC5TCEDoJ1t9NQi4QCitK6BLzsIdDx6PwM3NR8=" },
-      "app": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.19/E8-0.5.19-aarch64-apple-darwin.app.tar.gz", "hash": "sha256-" }
+      "app": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.19/E8-0.5.19-aarch64-apple-darwin.app.tar.gz", "hash": "sha256-DqMD6pQZ4Jo79UVibUOIro9lukGlaekcDX6v+MnnfRE=" }
     },
     "x86_64-linux": {
       "cli": { "url": "https://github.com/e8-editor/e8/releases/download/v0.5.19/e8-0.5.19-x86_64-unknown-linux-gnu.tar.gz", "hash": "sha256-Qpcc1hoZosnnpOR7oXX7NcTe3mjTMy/CU4S0caInxA4=" }
